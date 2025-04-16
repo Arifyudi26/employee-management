@@ -1,0 +1,20 @@
+tbody tr:hover {
+ background-color: #f1f1f1;
+}
+
+th.sorted {
+ background-color: #d1ecf1;
+}
+
+@media (max-width: 919px) {
+  .container-fluid {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .table-responsive {
+    margin-bottom: 20px;
+  }
+  .pagination {
+    justify-content: center;
+  }
+}

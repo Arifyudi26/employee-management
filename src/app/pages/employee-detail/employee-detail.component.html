@@ -1,0 +1,51 @@
+<div class="container-lg mt-5">
+  <ng-container *ngIf="employee; else noData">
+    <div class="card shadow border-0 rounded-4">
+      <div class="card-header bg-primary text-white fw-semibold rounded-top-4">
+        Employee Information
+      </div>
+      <div class="card-body p-4">
+        <div class="row gy-3">
+          <div class="col-md-6">
+            <p><strong>Username:</strong> {{ employee.username }}</p>
+            <p><strong>Name:</strong> {{ employee.firstName }} {{ employee.lastName }}</p>
+            <p><strong>Email:</strong> {{ employee.email }}</p>
+            <p><strong>Group:</strong> {{ employee.group }}</p>
+          </div>
+          <div class="col-md-6">
+            <p>
+              <strong>Birth Date:</strong>
+              {{ employee.birthDate | date: 'd MMM yyyy' }}
+            </p>
+            <p>
+              <strong>Salary:</strong>
+              Rp {{ employee.basicSalary | number : '1.0-0' }}
+            </p>
+            <p>
+              <strong class="me-2">Status:</strong>
+              <span class="badge bg-{{ employee.status === 'Active' ? 'success' : 'secondary' }}">
+                {{ employee.status }}
+              </span>
+            </p>
+            <p><strong>Description:</strong> {{ employee.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-template #noData>
+    <div class="alert alert-danger mt-4">
+      Data not found. Please navigate from the employee list page.
+    </div>
+  </ng-template>
+
+  <div class="text-center mt-4">
+    <button
+      class="btn btn-outline-primary px-4 py-2"
+      (click)="router.navigate(['/employees'])"
+    >
+      Back to List
+    </button>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+@import "@ng-select/ng-select/themes/default.theme.css";
+
+ng-select {
+ width: 100%;
+}
+
+ng-select .ng-select-container {
+ padding: 5px 15px;
+ border-radius: 5px;
+ border: 1px solid #ccc;
+}
+
+ng-select .ng-select-search {
+ padding: 5px 10px;
+}
